@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+// import  Message  from './Component/result'
+import Parent from "./parent"
+import Countercontext from './valueContext';
 
-function App() {
+
+export default function App() {
+  //  let [count, setCount] = useState(20);
+  let count=useState(1);
+
+  // let [count, setCount] = useState(1);
+  // let [isMorning, setMorning] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    // <div className={`box ${isMorning ? 'day' : ''}`}>
 
-export default App;
+    //   <h1>Good {isMorning ? 'Morning' : 'Night'}</h1>
+
+    //   <Message counter={count} />
+    //   <br />
+
+    //   <button onClick={() => setCount(count + 1)}>
+    //     Update Counter
+    //   </button>
+
+    //   <button onClick={() => setMorning(!isMorning)}> 
+    //     Update Day
+    //   </button>
+
+    // </div>
+    <Countercontext.Provider value={count}>
+    <div>
+    <Parent name="Fraz"/>
+</div>
+    </Countercontext.Provider>
+
+
+  )
+}
